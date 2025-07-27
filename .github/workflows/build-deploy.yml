@@ -34,6 +34,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: installing httpx
+        run: pip install httpx
+
       - name: Run tests with pytest
         run: |
           pip install pytest

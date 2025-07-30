@@ -86,5 +86,9 @@ jobs:
     needs: [ build ]
 
     steps:
-      - name: Deploying stuff
-        run: echo "Going to deploy some stuff"
+      - name: Trigger deployment
+        uses: sws2apps/render-deployment@main #consider using pin for dependabot auto update
+        with:
+            serviceId: ${{ secrets.RENDER_SERVICE_ID }}
+            apiKey: ${{ secrets.RENDER_API_KEY }}
+            multipleDeployment: false #optional, default true

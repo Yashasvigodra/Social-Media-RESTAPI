@@ -81,7 +81,7 @@ app.include_router(vote.router)
 #http methods:get post put head delete trace connect
 @app.get('/')# root path '/' path we have to go in url #decorator-make this function an acutal path operation without this it is just a normal function 
 async def root():#make thi sfunction as descriptive as possible 
-    return {'message':"welcome to my api "}#it will automatically be converted to jason and sent back to the user
+    return {'message':"welcome to my api.. "}#it will automatically be converted to jason and sent back to the user
 
 
 

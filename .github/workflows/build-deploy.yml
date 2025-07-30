@@ -96,3 +96,15 @@ jobs:
             serviceId: ${{ secrets.RENDER_SERVICE_ID }}
             apiKey: ${{ secrets.RENDER_API_KEY }}
 
+      - name: Deploying to ubuntu server
+        uses: appleboy/ssh-action@v1
+        with:
+            host: ${{ secrets.PROD_HOST }}
+            username: ${{ secrets.PROD_USERNAME }}
+            password: ${{ secrets.PROD_PASSWORD }}
+
+            script: |
+              cd app/src
+              git pull
+              sudo systemctl restart api
+
